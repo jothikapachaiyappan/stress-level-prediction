@@ -66,23 +66,24 @@ with col1:
 with col2:
 
     height_cm = st.number_input(
-    "Height (cm)",
-    min_value=100.0,
-    max_value=250.0,
-    value=170.0
-)
+        "Height (cm)",
+        100.0,
+        250.0,
+        170.0
+    )
 
-weight_kg = st.number_input(
-    "Weight (kg)",
-    min_value=20.0,
-    max_value=200.0,
-    value=70.0
-)
+    weight_kg = st.number_input(
+        "Weight (kg)",
+        20.0,
+        200.0,
+        70.0
+    )
 
-height_m = height_cm / 100
-bmi = weight_kg / (height_m ** 2)
+    height_m = height_cm / 100
+    bmi = weight_kg / (height_m ** 2)
 
-st.info(f"Calculated BMI: {bmi:.2f}")
+    st.info(f"Calculated BMI: {bmi:.2f}")
+
     smoking = st.selectbox(
         "Smoking",
         ["No", "Yes"]
