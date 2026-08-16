@@ -32,16 +32,22 @@ st.divider()
 # =====================================
 
 st.subheader("👤 Personal Information")
+# ==============================
+# PERSONAL INFORMATION
+# ==============================
 
 col1, col2 = st.columns(2)
 
+# ------------------------------
+# LEFT COLUMN
+# ------------------------------
 with col1:
 
     age = st.number_input(
         "Age",
-        18,
-        100,
-        25
+        min_value=18,
+        max_value=100,
+        value=25
     )
 
     gender = st.selectbox(
@@ -51,38 +57,47 @@ with col1:
 
     heart = st.number_input(
         "Heart Rate",
-        40,
-        180,
-        80
+        min_value=40,
+        max_value=180,
+        value=80
     )
 
     bp = st.number_input(
         "Blood Pressure",
-        80,
-        200,
-        120
+        min_value=80,
+        max_value=200,
+        value=120
     )
 
+
+# ------------------------------
+# RIGHT COLUMN
+# ------------------------------
 with col2:
 
-    height_cm = st.number_input(
+    height = st.number_input(
         "Height (cm)",
-        100.0,
-        250.0,
-        170.0
+        min_value=50.0,
+        max_value=250.0,
+        value=165.0,
+        step=0.1
     )
 
-    weight_kg = st.number_input(
+    weight = st.number_input(
         "Weight (kg)",
-        20.0,
-        200.0,
-        70.0
+        min_value=20.0,
+        max_value=200.0,
+        value=60.0,
+        step=0.1
     )
 
-    height_m = height_cm / 100
-    bmi = weight_kg / (height_m ** 2)
+    # Automatically calculate BMI
+    height_m = height / 100
+    bmi = weight / (height_m ** 2)
 
-    st.info(f"Calculated BMI: {bmi:.2f}")
+    st.info(
+        f"📊 Calculated BMI: **{bmi:.2f}**"
+    )
 
     smoking = st.selectbox(
         "Smoking",
