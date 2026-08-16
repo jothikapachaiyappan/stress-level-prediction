@@ -32,22 +32,16 @@ st.divider()
 # =====================================
 
 st.subheader("👤 Personal Information")
-# ==============================
-# PERSONAL INFORMATION
-# ==============================
 
 col1, col2 = st.columns(2)
 
-# ------------------------------
-# LEFT COLUMN
-# ------------------------------
 with col1:
 
     age = st.number_input(
         "Age",
-        min_value=18,
-        max_value=100,
-        value=25
+        18,
+        100,
+        25
     )
 
     gender = st.selectbox(
@@ -57,22 +51,19 @@ with col1:
 
     heart = st.number_input(
         "Heart Rate",
-        min_value=40,
-        max_value=180,
-        value=80
+        40,
+        180,
+        80
     )
 
     bp = st.number_input(
         "Blood Pressure",
-        min_value=80,
-        max_value=200,
-        value=120
+        80,
+        200,
+        120
     )
 
 
-# ------------------------------
-# RIGHT COLUMN
-# ------------------------------
 with col2:
 
     height = st.number_input(
@@ -95,9 +86,7 @@ with col2:
     height_m = height / 100
     bmi = weight / (height_m ** 2)
 
-    st.info(
-        f"📊 Calculated BMI: **{bmi:.2f}**"
-    )
+    st.info(f"📊 Calculated BMI: **{bmi:.2f}**")
 
     smoking = st.selectbox(
         "Smoking",
